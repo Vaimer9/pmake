@@ -6,6 +6,7 @@ function helpmsg() {
 	echo "1. clang    C"
 	echo "2. cpp      C++"
 	echo "3. hsk      Haskell"
+	echo "4. glang    Golang"
 }
 
 function createtree() {
@@ -34,6 +35,15 @@ function createtree() {
 					cp -r ~/.config/pmake/Haskell $2
 				else
 					mkdir ~/.config/pmake/Haskell
+					createtree $1 $2
+				fi
+			;;
+		glang)
+				if [ -d ~/.config/pmake/Golang ]
+				then
+					cp -r ~/.config/pmake/Golang $2
+				else
+					mkdir ~/.config/pmake/Golang
 					createtree $1 $2
 				fi
 			;;
